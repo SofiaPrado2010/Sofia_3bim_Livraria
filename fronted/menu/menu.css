@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Paleta Bela e a Fera --- */
+:root {
+    --cor-primaria: #502c42;
+    --cor-secundaria: #c5a45d;
+    --cor-secundaria-hover: #a88945;
+    --cor-fundo: #f8f0df;
+    --cor-texto: #514047;
+    --cor-borda: #d5b77e;
+    --cor-branco: #fff8f2;
+    --cor-cartao: #f8e9e8;
+}
+
+body {
+    position: relative;
+    background-image: url('http://localhost:3001/imagens/imagem.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Camada para clarear o fundo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 248, 235, 0.55);
+    z-index: -1;
+}
+
+/* --- Cabeçalho --- */
+header {
+    position: relative;
+    background: linear-gradient(120deg, #48283d, #63364d, #48283d);
+    color: var(--cor-branco);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--cor-secundaria);
+    box-shadow: 0 4px 12px rgba(50, 30, 40, 0.2);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    color: #f8e9c8;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #f8e9c8;
+}
+
+/* Rosa decorativa */
+header::after {
+    content: "🌹";
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.8rem;
+    filter: drop-shadow(0 0 6px rgba(230, 185, 90, 0.4));
+}
+
+/* --- Conteúdo Central --- */
+main.container-master {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* --- Grade dos Módulos --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Cartões --- */
+.card-menu {
+    position: relative;
+    background: linear-gradient(145deg, #fbefec, #f5e4e2);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(80, 44, 66, 0.08);
+    text-decoration: none;
+    color: var(--cor-texto);
+    text-align: center;
+    border: 1.5px solid var(--cor-borda);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-menu:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 8px 20px rgba(80, 44, 66, 0.16);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.card-menu h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+}
+
+.card-menu p {
+    font-size: 0.95rem;
+    color: #6d5b60;
+    line-height: 1.4;
+}
+
+/* Detalhe dourado nos cartões */
+.card-menu::after {
+    content: "✦";
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    margin-top: 0.7rem;
+}
+
+/* --- Rodapé --- */
+footer {
+    background: linear-gradient(120deg, #48283d, #63364d, #48283d);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--cor-secundaria);
+}
+
+/* --- Ajuste para telas menores --- */
+@media (max-width: 600px) {
+    header::after {
+        position: static;
+        display: block;
+        transform: none;
+        margin-top: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main.container-master {
+        margin: 2rem auto;
+    }
+
+    .menu-grid {
+        gap: 1rem;
+    }
+}

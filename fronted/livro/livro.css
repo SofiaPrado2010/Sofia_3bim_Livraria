@@ -1,0 +1,368 @@
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Paleta de Cores --- */
+:root {
+    --cor-primaria: #502c42;
+    --cor-secundaria: #c5a45d;
+    --cor-secundaria-hover: #a88945;
+    --cor-fundo: #f8f3e8;
+    --cor-texto: #514047;
+    --cor-borda: #dfcba5;
+    --cor-branco: #fffaf5;
+    --cor-cartao: #f8e9e8;
+    --cor-erro: #a83e4c;
+    --cor-sucesso: #456b4b;
+}
+
+/* --- Estrutura Geral --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:
+        linear-gradient(rgba(255, 248, 235, 0.65), rgba(255, 248, 235, 0.65)),
+        url('http://localhost:3001/imagens/imagem.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Cabeçalho --- */
+header {
+    position: relative;
+    background: linear-gradient(120deg, #48283d, #63364d, #48283d);
+    color: var(--cor-branco);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-secundaria);
+    box-shadow: 0 4px 12px rgba(50, 30, 40, 0.2);
+}
+
+header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    color: #f8e9c8;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #f8e9c8;
+}
+
+/* --- Conteúdo Principal --- */
+main.container-master {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.conteudo-principal {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* --- Formulário e Área da Imagem --- */
+.form-esquerda,
+.form-direita {
+    background: rgba(255, 250, 245, 0.94);
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 5px 18px rgba(80, 44, 66, 0.1);
+}
+
+.form-esquerda h2,
+.form-direita h2 {
+    color: var(--cor-primaria);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* --- Rótulos e Campos --- */
+.form-esquerda label {
+    display: block;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 1rem 0 0.4rem;
+}
+
+.form-esquerda input[type="text"],
+.form-esquerda input[type="number"],
+.form-esquerda select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 7px;
+    background-color: #fffdf9;
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-esquerda input:focus,
+.form-esquerda select:focus {
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 3px rgba(197, 164, 93, 0.16);
+}
+
+.form-esquerda input:disabled,
+.form-esquerda select:disabled {
+    background-color: #eee8df;
+    color: #82777a;
+    cursor: not-allowed;
+}
+
+/* --- Linha do ID --- */
+.linha-id {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.linha-id input[type="text"] {
+    flex: 1;
+    min-width: 100px;
+}
+
+/* --- Botões --- */
+.linha-id input[type="button"],
+.botoes-acao input[type="button"] {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.linha-id input[type="button"]:hover,
+.botoes-acao input[type="button"]:hover {
+    background-color: #69445a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(80, 44, 66, 0.18);
+}
+
+/* Botão de excluir */
+#btExcluir {
+    background-color: #a83e4c;
+    border-color: #a83e4c;
+}
+
+#btExcluir:hover {
+    background-color: #87303c;
+}
+
+/* Botão de salvar */
+#btSalvar {
+    background-color: #456b4b;
+    border-color: #456b4b;
+}
+
+#btSalvar:hover {
+    background-color: #345439;
+}
+
+/* Botão cancelar */
+#btCancelar {
+    background-color: #82777a;
+    border-color: #82777a;
+}
+
+#btCancelar:hover {
+    background-color: #685e61;
+}
+
+/* --- Avisos --- */
+#divAviso {
+    margin-top: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 7px;
+    background-color: #f5eddb;
+    border-left: 4px solid var(--cor-secundaria);
+    color: #65513d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* --- Botões de Ação --- */
+.botoes-acao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+/* --- Imagem do Livro --- */
+.form-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instrucao-imagem {
+    font-size: 0.9rem;
+    color: #786970;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    min-height: 280px;
+    padding: 1rem;
+    background: linear-gradient(145deg, #f8e9e8, #f3e4d9);
+    border: 1.5px dashed var(--cor-secundaria);
+    border-radius: 12px;
+}
+
+.img-container img {
+    display: block;
+    max-width: 100%;
+    width: 200px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(0 5px 8px rgba(80, 44, 66, 0.15));
+}
+
+.img-container img:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 8px 12px rgba(80, 44, 66, 0.22));
+}
+
+/* --- Lista de Livros --- */
+.lista-livros {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 250, 245, 0.95);
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(80, 44, 66, 0.1);
+}
+
+.lista-livros h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+/* --- Tabela gerada pelo JavaScript --- */
+#outputSaida {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#outputSaida table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fffdf9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#outputSaida th {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 0.9rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+#outputSaida td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eadfce;
+    color: var(--cor-texto);
+    vertical-align: middle;
+}
+
+#outputSaida tr:nth-child(even) {
+    background-color: #f8efed;
+}
+
+#outputSaida tr:hover {
+    background-color: #f3e5d9;
+}
+
+/* --- Rodapé --- */
+footer {
+    background: linear-gradient(120deg, #48283d, #63364d, #48283d);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 1.3rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--cor-secundaria);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 750px) {
+    .conteudo-principal {
+        grid-template-columns: 1fr;
+    }
+
+    main.container-master {
+        margin: 1.5rem auto;
+    }
+
+    .form-esquerda,
+    .form-direita {
+        padding: 1.4rem;
+    }
+
+    .img-container {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .linha-id {
+        align-items: stretch;
+    }
+
+    .linha-id input[type="button"] {
+        flex: 1;
+    }
+
+    .lista-livros {
+        padding: 1rem;
+    }
+}

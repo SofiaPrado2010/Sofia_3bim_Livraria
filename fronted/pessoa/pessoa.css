@@ -1,0 +1,360 @@
+:root {
+    --vinho: #502c42;
+    --vinho-escuro: #392032;
+    --dourado: #c5a45d;
+    --bege: #f8f3e8;
+    --bege-claro: #fffdf8;
+    --rosa: #f2e4e5;
+    --verde: #314b3b;
+    --vermelho: #a34444;
+    --texto: #3f302e;
+    --borda: #d9cbb6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    color: var(--texto);
+    background-image:
+        linear-gradient(rgba(255, 248, 235, 0.65), rgba(255, 248, 235, 0.65)),
+        url('http://localhost:3001/imagens/imagem.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--bege);
+}
+
+/* Cabeçalho */
+
+header {
+    background: rgba(80, 44, 66, 0.96);
+    color: var(--bege);
+    text-align: center;
+    padding: 22px;
+    border-bottom: 4px solid var(--dourado);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Conteúdo principal */
+
+main {
+    width: min(1100px, 92%);
+    margin: 35px auto;
+}
+
+/* Formulário */
+
+.form-section,
+.list-section {
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 28px;
+    box-shadow: 0 5px 18px rgba(57, 32, 50, 0.13);
+}
+
+.form-section h2 {
+    color: var(--vinho);
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 24px;
+}
+
+/* Busca e botões */
+
+.search-container {
+    margin-bottom: 22px;
+}
+
+.search-container > label {
+    display: block;
+    font-weight: bold;
+    color: var(--vinho);
+    margin-bottom: 9px;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-input-group input {
+    flex: 1;
+    min-width: 180px;
+}
+
+input,
+select {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: var(--texto);
+    background: var(--bege-claro);
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    padding: 11px 12px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(197, 164, 93, 0.18);
+}
+
+button {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+#btnBuscar,
+.btn-primary {
+    background: var(--vinho);
+    color: white;
+}
+
+#btnBuscar:hover,
+.btn-primary:hover {
+    background: var(--vinho-escuro);
+}
+
+.btn-secondary {
+    background: var(--dourado);
+    color: #30251c;
+}
+
+.btn-secondary:hover {
+    background: #b4934c;
+}
+
+.btn-danger {
+    background: var(--vermelho);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #873737;
+}
+
+.btn-save {
+    background: var(--verde);
+    color: white;
+}
+
+.btn-save:hover {
+    background: #243b2e;
+}
+
+.btn-cancel {
+    background: #e9dfd2;
+    color: var(--vinho);
+    border: 1px solid var(--borda);
+}
+
+.btn-cancel:hover {
+    background: #ded0bf;
+}
+
+/* Campos de dados */
+
+fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+legend {
+    color: var(--vinho);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--vinho);
+}
+
+.form-group input {
+    width: 100%;
+}
+
+/* Cliente e funcionário */
+
+.umParaum {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.funcionario,
+.cliente {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: var(--bege);
+}
+
+.funcionario span,
+.cliente span {
+    color: var(--vinho);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.funcionario input[type="checkbox"],
+.cliente input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--vinho);
+    cursor: pointer;
+}
+
+.funcionario label,
+.cliente label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--vinho);
+}
+
+.funcionario input,
+.funcionario select,
+.cliente input {
+    width: 100%;
+}
+
+/* Tabela */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 9px;
+}
+
+#pessoasTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bege-claro);
+    font-size: 14px;
+}
+
+#pessoasTable th {
+    background: var(--vinho);
+    color: white;
+    padding: 14px 12px;
+    text-align: left;
+    font-weight: normal;
+    border-bottom: 3px solid var(--dourado);
+    white-space: nowrap;
+}
+
+#pessoasTable td {
+    padding: 12px;
+    border-bottom: 1px solid var(--borda);
+    overflow-wrap: anywhere;
+}
+
+#pessoasTable tbody tr:nth-child(even) {
+    background: var(--rosa);
+}
+
+#pessoasTable tbody tr:hover {
+    background: #efe1ca;
+}
+
+/* Mensagens */
+
+.message-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+/* Rodapé */
+
+footer {
+    background: rgba(80, 44, 66, 0.96);
+    color: var(--bege);
+    text-align: center;
+    padding: 16px;
+    border-top: 3px solid var(--dourado);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .form-section,
+    .list-section {
+        padding: 17px;
+    }
+
+    fieldset,
+    .umParaum {
+        grid-template-columns: 1fr;
+    }
+
+    .search-input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input-group input,
+    .search-input-group button {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+}
