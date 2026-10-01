@@ -7,7 +7,6 @@ require('dotenv').config();
 const { query } = require('./database');
 
 // Importa as rotas
-const pagamentoRoutes = require('./routes/pagamentoRoutes');
 const cargoRoutes = require('./routes/cargoRoutes');
 const generoRoutes = require('./routes/generoRoutes');
 const livroRoutes = require('./routes/livroRoutes');
@@ -24,7 +23,6 @@ app.use(express.json());
 app.use('/imagens', express.static(path.join(__dirname, '../imagens')));
 
 // Definir Rotas
-app.use('/forma_pagamento', pagamentoRoutes);
 app.use('/cargo', cargoRoutes);
 app.use('/genero', generoRoutes);
 app.use('/livro', livroRoutes);
